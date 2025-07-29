@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title', 'Activities')
+@section('title', 'actividades')
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>⚙️ Activities</h1>
-        <a href="{{ route('activities.create') }}" class="btn btn-success">➕ New Activity</a>
+        <h1>⚙️ actividades</h1>
+        <a href="{{ route('actividades.create') }}" class="btn btn-success">➕ New Activity</a>
     </div>
 
-    @if ($activities->isEmpty())
-        <div class="alert alert-info">No activities registered.</div>
+    @if ($actividades->isEmpty())
+        <div class="alert alert-info">No actividades registered.</div>
     @else
         <div class="table-responsive">
             <table class="table table-striped table-hover">
@@ -20,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($activities as $activity)
+                    @foreach ($actividades as $activity)
                         <tr>
                             <td>{{ $activity->nombre }}</td>
                             <td>{{ ucfirst($activity->dia) }}</td>
@@ -29,9 +29,9 @@
                                 {{ \Carbon\Carbon::parse($activity->hora_fin)->format('H:i') }}
                             </td>
                             <td>
-                                <a href="{{ route('activities.show', $activity) }}" class="btn btn-sm btn-info">View</a>
-                                <a href="{{ route('activities.edit', $activity) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form action="{{ route('activities.destroy', $activity) }}" method="POST" style="display: inline;">
+                                <a href="{{ route('actividades.show', $activity) }}" class="btn btn-sm btn-info">View</a>
+                                <a href="{{ route('actividades.edit', $activity) }}" class="btn btn-sm btn-warning">Edit</a>
+                                <form action="{{ route('actividades.destroy', $activity) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this activity?')">Delete</button>

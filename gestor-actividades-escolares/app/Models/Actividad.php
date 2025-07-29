@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class Actividad extends Model
 {
-    protected $table = 'actividades'; // sigue apuntando a la tabla en español
+    protected $guarded = [];
+     
+    protected $table = 'actividades'; 
 
     public function alumnos()
     {

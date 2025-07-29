@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Actividad;
 use Illuminate\Http\Request;
 
-class ActivityController extends Controller
+class ActividadController extends Controller
 {
     public function index()
     {
-        $activities = Actividad::all();
-        return view('activities.index', compact('activities'));
+        $actividades = Actividad::all();
+        return view('actividades.index', compact('actividades'));
     }
 
     public function create()
     {
-        return view('activities.create');
+        return view('actividades.create');
     }
 
     public function store(Request $request)
@@ -30,18 +30,18 @@ class ActivityController extends Controller
 
         Actividad::create($request->all());
 
-        return redirect()->route('activities.index')
+        return redirect()->route('actividades.index')
                          ->with('success', 'Actividad creada con éxito.');
     }
 
     public function show(Actividad $activity)
     {
-        return view('activities.show', compact('activity'));
+        return view('actividades.show', compact('activity'));
     }
 
     public function edit(Actividad $activity)
     {
-        return view('activities.edit', compact('activity'));
+        return view('actividades.edit', compact('activity'));
     }
 
     public function update(Request $request, Actividad $activity)
@@ -56,14 +56,14 @@ class ActivityController extends Controller
 
         $activity->update($request->all());
 
-        return redirect()->route('activities.index')
+        return redirect()->route('actividades.index')
                          ->with('success', 'Actividad actualizada con éxito.');
     }
 
     public function destroy(Actividad $activity)
     {
         $activity->delete();
-        return redirect()->route('activities.index')
+        return redirect()->route('actividades.index')
                          ->with('success', 'Actividad eliminada con éxito.');
     }
 }

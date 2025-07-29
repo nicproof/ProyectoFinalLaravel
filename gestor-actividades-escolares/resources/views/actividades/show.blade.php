@@ -4,8 +4,8 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>{{ $activity->nombre }}</h1>
         <div>
-            <a href="{{ route('activities.edit', $activity) }}" class="btn btn-warning">Edit</a>
-            <a href="{{ route('activities.index') }}" class="btn btn-secondary">Back</a>
+            <a href="{{ route('actividades.edit', $activity) }}" class="btn btn-warning">Edit</a>
+            <a href="{{ route('actividades.index') }}" class="btn btn-secondary">Back</a>
         </div>
     </div>
 

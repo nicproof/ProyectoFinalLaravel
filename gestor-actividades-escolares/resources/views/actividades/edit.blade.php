@@ -3,7 +3,7 @@
 @section('content')
     <h1>✏️ Edit Activity: {{ $activity->nombre }}</h1>
 
-    <form action="{{ route('activities.update', $activity) }}" method="POST">
+    <form action="{{ route('actividades.update', $activity) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">
@@ -39,7 +39,7 @@
 
         <div class="d-flex gap-2">
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('activities.index') }}" class="btn btn-secondary">Cancel</a>
+            <a href="{{ route('actividades.index') }}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 @endsection
