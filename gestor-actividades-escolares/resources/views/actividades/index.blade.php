@@ -2,8 +2,8 @@
 @section('title', 'actividades')
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>⚙️ actividades</h1>
-        <a href="{{ route('actividades.create') }}" class="btn btn-success">➕ New Activity</a>
+        <h1>🎯 Actividades</h1>
+        <a href="{{ route('actividades.create') }}" class="btn btn-success">➕ New actividad</a>
     </div>
 
     @if ($actividades->isEmpty())
@@ -20,21 +20,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($actividades as $activity)
+                    @foreach ($actividades as $actividad)
                         <tr>
-                            <td>{{ $activity->nombre }}</td>
-                            <td>{{ ucfirst($activity->dia) }}</td>
+                            <td>{{ $actividad->nombre }}</td>
+                            <td>{{ ucfirst($actividad->dia) }}</td>
                             <td>
-                                {{ \Carbon\Carbon::parse($activity->hora_inicio)->format('H:i') }} -
-                                {{ \Carbon\Carbon::parse($activity->hora_fin)->format('H:i') }}
+                                {{ \Carbon\Carbon::parse($actividad->hora_inicio)->format('H:i') }} -
+                                {{ \Carbon\Carbon::parse($actividad->hora_fin)->format('H:i') }}
                             </td>
                             <td>
-                                <a href="{{ route('actividades.show', $activity) }}" class="btn btn-sm btn-info">View</a>
-                                <a href="{{ route('actividades.edit', $activity) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form action="{{ route('actividades.destroy', $activity) }}" method="POST" style="display: inline;">
+                                <a href="{{ route('actividades.show', $actividad) }}" class="btn btn-sm btn-info">Ver</a>
+                                <a href="{{ route('actividades.edit', $actividad) }}" class="btn btn-sm btn-warning">Editar</a>
+                                <form action="{{ route('actividades.destroy', $actividad) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this activity?')">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this actividad?')">Delete</button>
                                 </form>
                             </td>
                         </tr>

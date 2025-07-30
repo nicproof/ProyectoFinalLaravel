@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Create Activity')
+@section('title', 'Create actividad')
 @section('content')
-    <h1>➕ Create New Activity</h1>
+    <h1>➕ Create New actividad</h1>
 
     <form action="{{ route('actividades.store') }}" method="POST">
         @csrf
@@ -38,7 +38,7 @@
         </div>
 
         <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-success">Save Activity</button>
+            <button type="submit" class="btn btn-success">Save actividad</button>
             <a href="{{ route('actividades.index') }}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>

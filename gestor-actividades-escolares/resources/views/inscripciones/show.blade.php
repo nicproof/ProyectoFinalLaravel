@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Detalles de la Inscripción</h1>
         <div>
-            <a href="{{ route('inscripciones.edit', $inscripcion) }}" class="btn btn-warning">Editar</a>
+            {{-- <a href="{{ route('inscripciones.edit', $inscripcion) }}" class="btn btn-warning">Editar</a> --}}
             <a href="{{ route('inscripciones.index') }}" class="btn btn-secondary">Volver</a>
         </div>
     </div>

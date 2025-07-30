@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Gestión Escolar</a>
+            <a class="navbar-brand" href="{{ route('home') }}"><h3>GESTIÓN ACTIVIDADES ESCOLARES</h3></a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ route('alumnos.index') }}">Alumnos</a>
                 <a class="nav-link" href="{{ route('actividades.index') }}">Actividades</a>

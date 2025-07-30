@@ -2,7 +2,7 @@
 @section('title', 'Alumnos')
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>🎓 Alumnos</h1>
+        <h1>👫 Alumnos</h1>
         <a href="{{ route('alumnos.create') }}" class="btn btn-success">➕ Nuevo Alumno</a>
     </div>
 

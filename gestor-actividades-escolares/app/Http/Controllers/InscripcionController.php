@@ -51,12 +51,12 @@ class InscripcionController extends Controller
         return view('inscripciones.show', compact('inscripcion'));
     }
 
-    public function edit(Inscripcion $inscripcion)
-    {
-        $alumnos = Alumno::all();
-        $actividades = Actividad::all();
-        return view('inscripciones.edit', compact('inscripcion', 'alumnos', 'actividades'));
-    }
+    // public function edit(Inscripcion $inscripcion)
+    // {
+    //     $alumnos = Alumno::all();
+    //     $actividades = Actividad::all();
+    //     return view('inscripciones.edit', compact('inscripcion', 'alumnos', 'actividades'));
+    // }
 
     public function update(Request $request, Inscripcion $inscripcion)
     {

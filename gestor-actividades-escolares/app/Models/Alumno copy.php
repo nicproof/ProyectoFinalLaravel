@@ -19,13 +19,16 @@ class Alumno extends Model
     //                 ->withPivot(['fecha_inscripcion', 'estado']);
     // }
 
+    public function actividades()
+{
+    return $this->belongsToMany(Actividad::class, 'inscripciones')
+                ->withPivot(['fecha_inscripcion', 'estado'])
+                ->withTimestamps();
+}
+
     public function inscripciones()
     {
         return $this->hasMany(Inscripcion::class);
     }
-
-    public function actividades()
-    {
-        return $this->hasManyThrough(Actividad::class, Inscripcion::class, 'alumno_id', 'id', 'id', 'actividad_id');
-    }
 }
+

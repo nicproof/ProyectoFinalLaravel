@@ -29,13 +29,20 @@ class AlumnoController extends Controller
         Alumno::create($request->all());
 
         return redirect()->route('alumnos.index')
-                         ->with('success', 'Alumno creado con éxito.');
+            ->with('success', 'Alumno creado con éxito.');
     }
+
+    // public function show(Alumno $alumno)
+    // {
+    //     return view('alumnos.show', compact('alumno'));
+    // }
 
     public function show(Alumno $alumno)
     {
+        $alumno->load('inscripciones.actividad');
         return view('alumnos.show', compact('alumno'));
     }
+
 
     public function edit(Alumno $alumno)
     {
@@ -53,13 +60,13 @@ class AlumnoController extends Controller
         $alumno->update($request->all());
 
         return redirect()->route('alumnos.index')
-                         ->with('success', 'Alumno actualizado con éxito.');
+            ->with('success', 'Alumno actualizado con éxito.');
     }
 
     public function destroy(Alumno $alumno)
     {
         $alumno->delete();
         return redirect()->route('alumnos.index')
-                         ->with('success', 'Alumno eliminado con éxito.');
+            ->with('success', 'Alumno eliminado con éxito.');
     }
 }

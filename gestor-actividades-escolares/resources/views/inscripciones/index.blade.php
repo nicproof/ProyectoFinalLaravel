@@ -2,7 +2,7 @@
 @section('title', 'Inscripciones')
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>📋 Inscripciones</h1>
+        <h1>✍ Inscripciones</h1>
         <a href="{{ route('inscripciones.create') }}" class="btn btn-success">➕ Nueva Inscripción</a>
     </div>
 
@@ -36,7 +36,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('inscripciones.show', $inscripcion) }}" class="btn btn-sm btn-info">Ver</a>
-                                <a href="{{ route('inscripciones.edit', $inscripcion) }}" class="btn btn-sm btn-warning">Editar</a>
+                                {{-- <a href="{{ route('inscripciones.edit', $inscripcion) }}" class="btn btn-sm btn-warning">Editar</a> --}}
                                 <form action="{{ route('inscripciones.destroy', $inscripcion) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')

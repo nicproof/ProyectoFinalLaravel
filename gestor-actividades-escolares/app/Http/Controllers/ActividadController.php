@@ -31,20 +31,27 @@ class ActividadController extends Controller
         Actividad::create($request->all());
 
         return redirect()->route('actividades.index')
-                         ->with('success', 'Actividad creada con éxito.');
+            ->with('success', 'Actividad creada con éxito.');
     }
 
-    public function show(Actividad $activity)
+    // public function show(Actividad $actividad)
+    // {
+    //     return view('actividades.show', compact('actividad'));
+    // }
+
+    public function show(Actividad $actividad)
     {
-        return view('actividades.show', compact('activity'));
+        $actividad->load('inscripciones.alumno'); // Asegura que la relación esté cargada
+        return view('actividades.show', compact('actividad'));
     }
 
-    public function edit(Actividad $activity)
+
+    public function edit(Actividad $actividad)
     {
-        return view('actividades.edit', compact('activity'));
+        return view('actividades.edit', compact('actividad'));
     }
 
-    public function update(Request $request, Actividad $activity)
+    public function update(Request $request, Actividad $actividad)
     {
         $request->validate([
             'nombre' => 'required|string|max:255',
@@ -54,16 +61,16 @@ class ActividadController extends Controller
             'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
         ]);
 
-        $activity->update($request->all());
+        $actividad->update($request->all());
 
         return redirect()->route('actividades.index')
-                         ->with('success', 'Actividad actualizada con éxito.');
+            ->with('success', 'Actividad actualizada con éxito.');
     }
 
-    public function destroy(Actividad $activity)
+    public function destroy(Actividad $actividad)
     {
-        $activity->delete();
+        $actividad->delete();
         return redirect()->route('actividades.index')
-                         ->with('success', 'Actividad eliminada con éxito.');
+            ->with('success', 'Actividad eliminada con éxito.');
     }
 }
