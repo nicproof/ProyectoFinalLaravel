@@ -10,21 +10,11 @@ use App\Http\Requests\ActividadRequest;
 
 class ActividadController extends Controller
 {
- public function index(Request $request)
-{
-    $query = Actividad::query();
-
-    if ($request->filled('search')) {
-        $search = $request->input('search');
-        $query->where('nombre', 'like', "%{$search}%")
-              ->orWhere('dia', 'like', "%{$search}%");
+    public function index()
+    {
+        $actividades = Actividad::paginate(12);
+        return view('actividades.index', compact('actividades'));
     }
-
-    $actividades = $query->orderBy('nombre')->paginate(12)->withQueryString();
-
-    return view('actividades.index', compact('actividades'));
-}
-
 
     public function create()
     {

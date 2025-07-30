@@ -4,6 +4,12 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>🎯 Actividades</h1>
 
+        <form method="GET" action="{{ route('actividades.index') }}" class="d-flex me-2">
+            <input type="text" name="search" class="form-control me-2" placeholder="Buscar actividad..."
+                value="{{ request('search') }}">
+            <button type="submit" class="btn btn-outline-primary">Buscar</button>
+        </form>
+
         <a href="{{ route('actividades.pdf') }}" class="btn btn-danger">
             📄 Listado Activida/Alumno
         </a>
@@ -50,7 +56,7 @@
             </table>
         </div>
     @endif
-               <div class="d-flex justify-content-center mt-4">
-            {{ $actividades->links('pagination::bootstrap-5') }}
-        </div>
+    <div class="d-flex justify-content-center mt-4">
+        {{ $actividades->links('pagination::bootstrap-5') }}
+    </div>
 @endsection
