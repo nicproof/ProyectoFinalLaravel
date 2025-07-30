@@ -11,7 +11,8 @@
 
     <div class="card">
         <div class="card-body">
-            <p><strong>Alumno:</strong> {{ $inscripcion->alumno->nombre }} ({{ $inscripcion->alumno->curso }})</p>
+            <p><strong>Alumno:</strong> {{ $inscripcion->alumno->nombre }} </p>
+            <p><strong>Curso:</strong> {{ $inscripcion->alumno->curso }} <strong> &nbsp;&nbsp; Edad:</strong> {{ $inscripcion->alumno->edad }}</p>
             <p><strong>Actividad:</strong> {{ $inscripcion->actividad->nombre }} ({{ ucfirst($inscripcion->actividad->dia) }})</p>
             <p><strong>Fecha de Inscripción:</strong> {{ \Carbon\Carbon::parse($inscripcion->fecha_inscripcion)->format('d/m/Y') }}</p>
             <p><strong>Estado:</strong>

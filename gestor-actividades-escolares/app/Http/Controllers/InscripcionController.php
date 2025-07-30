@@ -11,7 +11,7 @@ class InscripcionController extends Controller
 {
     public function index()
     {
-        $inscripciones = Inscripcion::with('alumno', 'actividad')->get();
+        $inscripciones = Inscripcion::with('alumno', 'actividad')->paginate(12);
         return view('inscripciones.index', compact('inscripciones'));
     }
 
@@ -51,12 +51,12 @@ class InscripcionController extends Controller
         return view('inscripciones.show', compact('inscripcion'));
     }
 
-    // public function edit(Inscripcion $inscripcion)
-    // {
-    //     $alumnos = Alumno::all();
-    //     $actividades = Actividad::all();
-    //     return view('inscripciones.edit', compact('inscripcion', 'alumnos', 'actividades'));
-    // }
+    public function edit(Inscripcion $inscripcion)
+    {
+        $alumnos = Alumno::all();
+        $actividades = Actividad::all();
+        return view('inscripciones.edit', compact('inscripcion', 'alumnos', 'actividades'));
+    }
 
     public function update(Request $request, Inscripcion $inscripcion)
     {
@@ -80,7 +80,7 @@ class InscripcionController extends Controller
         $inscripcion->update($request->all());
 
         return redirect()->route('inscripciones.index')
-                         ->with('success', 'Inscripción actualizada con éxito.');
+                         ->with('success', 'Modificación del Estado de la Inscripción realizada con éxito.');
     }
 
     public function destroy(Inscripcion $inscripcion)

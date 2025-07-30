@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
-use Illuminate\Http\Request;
+use App\Http\Requests\AlumnoRequest;
 
 class AlumnoController extends Controller
 {
     public function index()
     {
-        $alumnos = Alumno::all();
+        $alumnos = Alumno::paginate(12);
         return view('alumnos.index', compact('alumnos'));
     }
 
@@ -18,55 +18,38 @@ class AlumnoController extends Controller
         return view('alumnos.create');
     }
 
-    public function store(Request $request)
+    public function store(AlumnoRequest $request)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'curso' => 'required|string|max:255',
-            'edad' => 'required|integer|min:5|max:18',
-        ]);
 
         Alumno::create($request->all());
 
         return redirect()->route('alumnos.index')
-            ->with('success', 'Alumno creado con éxito.');
+                         ->with('success', 'Alumno creado con éxito.');
     }
-
-    // public function show(Alumno $alumno)
-    // {
-    //     return view('alumnos.show', compact('alumno'));
-    // }
 
     public function show(Alumno $alumno)
     {
-        $alumno->load('inscripciones.actividad');
         return view('alumnos.show', compact('alumno'));
     }
-
 
     public function edit(Alumno $alumno)
     {
         return view('alumnos.edit', compact('alumno'));
     }
 
-    public function update(Request $request, Alumno $alumno)
+    public function update(AlumnoRequest $request, Alumno $alumno)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'curso' => 'required|string|max:255',
-            'edad' => 'required|integer|min:5|max:18',
-        ]);
 
         $alumno->update($request->all());
 
         return redirect()->route('alumnos.index')
-            ->with('success', 'Alumno actualizado con éxito.');
+                         ->with('success', 'Alumno actualizado con éxito.');
     }
 
     public function destroy(Alumno $alumno)
     {
         $alumno->delete();
         return redirect()->route('alumnos.index')
-            ->with('success', 'Alumno eliminado con éxito.');
+                         ->with('success', 'Alumno eliminado con éxito.');
     }
 }

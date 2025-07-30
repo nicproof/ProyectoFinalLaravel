@@ -20,9 +20,3 @@ Route::resource('alumnos', AlumnoController::class);
 Route::resource('inscripciones', InscripcionController::class)->parameters([
     'inscripciones' => 'inscripcion'
 ]);
-
-Route::get('/actividades-con-alumnos', [ActividadController::class, 'listadoConAlumnos'])
-    ->name('actividades.listado');
-
-Route::get('/actividades-pdf', [ActividadController::class, 'generarPdf'])
-    ->name('actividades.pdf');

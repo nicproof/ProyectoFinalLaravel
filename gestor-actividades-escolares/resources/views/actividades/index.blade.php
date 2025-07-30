@@ -3,7 +3,11 @@
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>🎯 Actividades</h1>
-        <a href="{{ route('actividades.create') }}" class="btn btn-success">➕ New actividad</a>
+
+        <a href="{{ route('actividades.pdf') }}" class="btn btn-danger">
+            📄 Listado Activida/Alumno
+        </a>
+        <a href="{{ route('actividades.create') }}" class="btn btn-success">➕ Añadir Actividad</a>
     </div>
 
     @if ($actividades->isEmpty())
@@ -13,10 +17,10 @@
             <table class="table table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
-                        <th>Name</th>
-                        <th>Day</th>
-                        <th>Time</th>
-                        <th>Actions</th>
+                        <th>Nombre</th>
+                        <th>Día</th>
+                        <th>Horario</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,11 +34,14 @@
                             </td>
                             <td>
                                 <a href="{{ route('actividades.show', $actividad) }}" class="btn btn-sm btn-info">Ver</a>
-                                <a href="{{ route('actividades.edit', $actividad) }}" class="btn btn-sm btn-warning">Editar</a>
-                                <form action="{{ route('actividades.destroy', $actividad) }}" method="POST" style="display: inline;">
+                                <a href="{{ route('actividades.edit', $actividad) }}"
+                                    class="btn btn-sm btn-warning">Editar</a>
+                                <form action="{{ route('actividades.destroy', $actividad) }}" method="POST"
+                                    style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this actividad?')">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Are you sure you want to delete this actividad?')">Borrar</button>
                                 </form>
                             </td>
                         </tr>
@@ -43,4 +50,7 @@
             </table>
         </div>
     @endif
+               <div class="d-flex justify-content-center mt-4">
+            {{ $actividades->links('pagination::bootstrap-5') }}
+        </div>
 @endsection
