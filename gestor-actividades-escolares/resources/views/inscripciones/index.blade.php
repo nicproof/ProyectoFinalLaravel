@@ -36,7 +36,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('inscripciones.show', $inscripcion) }}" class="btn btn-sm btn-info">Ver</a>
-                                <a href="{{ route('inscripciones.edit', $inscripcion) }}" class="btn btn-sm btn-warning">Editar</a>
+                                <a href="{{ route('inscripciones.edit', $inscripcion) }}" class="btn btn-sm btn-warning">Cambiar Estado</a>
                                 <form action="{{ route('inscripciones.destroy', $inscripcion) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')

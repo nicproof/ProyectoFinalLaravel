@@ -80,7 +80,7 @@ class InscripcionController extends Controller
         $inscripcion->update($request->all());
 
         return redirect()->route('inscripciones.index')
-                         ->with('success', 'Inscripción actualizada con éxito.');
+                         ->with('success', 'Modificación del Estado de la Inscripción realizada con éxito.');
     }
 
     public function destroy(Inscripcion $inscripcion)
