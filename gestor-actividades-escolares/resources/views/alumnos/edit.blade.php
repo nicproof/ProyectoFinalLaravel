@@ -6,9 +6,7 @@
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4>✏️ Editar Alumno: <strong>{{ $alumno->nombre }}</strong></h4>
-            <a href="{{ route('alumnos.index') }}" class="btn btn-outline-secondary btn-sm">
-                ← Volver al listado
-            </a>
+            <a href="{{ route('alumnos.index') }}" class="btn btn-secondary">Volver</a>
         </div>
 
         <div class="card shadow-sm">

@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AlumnoRequest; // Importa el Request
 use App\Models\Alumno;
-use Illuminate\Http\Request;
+use App\Http\Requests\AlumnoRequest;
 
 class AlumnoController extends Controller
 {
     public function index()
     {
-        $alumnos = Alumno::all();
+        $alumnos = Alumno::paginate(9);
         return view('alumnos.index', compact('alumnos'));
     }
 
@@ -19,12 +18,13 @@ class AlumnoController extends Controller
         return view('alumnos.create');
     }
 
-    public function store(AlumnoRequest $request) // Usa AlumnoRequest
+    public function store(AlumnoRequest $request)
     {
-        Alumno::create($request->validated());
+
+        Alumno::create($request->all());
 
         return redirect()->route('alumnos.index')
-            ->with('success', 'Alumno creado con éxito.');
+                         ->with('success', 'Alumno creado con éxito.');
     }
 
     public function show(Alumno $alumno)
@@ -37,18 +37,19 @@ class AlumnoController extends Controller
         return view('alumnos.edit', compact('alumno'));
     }
 
-    public function update(AlumnoRequest $request, Alumno $alumno) // Usa AlumnoRequest
+    public function update(AlumnoRequest $request, Alumno $alumno)
     {
-        $alumno->update($request->validated());
+
+        $alumno->update($request->all());
 
         return redirect()->route('alumnos.index')
-            ->with('success', 'Alumno actualizado con éxito.');
+                         ->with('success', 'Alumno actualizado con éxito.');
     }
 
     public function destroy(Alumno $alumno)
     {
         $alumno->delete();
         return redirect()->route('alumnos.index')
-            ->with('success', 'Alumno eliminado con éxito.');
+                         ->with('success', 'Alumno eliminado con éxito.');
     }
 }

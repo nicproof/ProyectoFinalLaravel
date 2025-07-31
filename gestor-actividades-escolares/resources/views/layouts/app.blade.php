@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - Gestión Escolar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Opcional: hacer el texto del alert más pequeño */
-        .alert-small {
-            font-size: 0.875rem; /* 14px */
-            padding: 0.5rem 1rem;
-        }
-        .alert-small .btn-close {
-            font-size: 0.75rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+    <main class="flex-fill">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">Gestión Escolar</a>
@@ -32,7 +25,7 @@
         <!-- Mensaje de éxito -->
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show alert-small" id="alert-success" role="alert">
-                <small>✅ {{ session('success') }}</small>
+                <small>{{ session('success') }}</small>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -41,7 +34,7 @@
         @if($errors->any())
             <div class="alert alert-danger alert-dismissible fade show alert-small" id="alert-errors" role="alert">
                 <small>
-                    ⚠️ Corrige los siguientes errores:
+                    Corrige los siguientes errores:
                     <ul class="mb-0 mt-1">
                         @foreach($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -54,6 +47,11 @@
 
         @yield('content')
     </div>
+</main>
+        <footer class="bg-light py-2 text-center">
+        © 2025 Sistema de Gestión Escolar | Desarrollado por Juan Carlos Darias Alonso
+    </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -68,7 +66,7 @@
                     setTimeout(() => {
                         const bsAlert = new bootstrap.Alert(alert);
                         bsAlert.close();
-                    }, 3000);
+                    }, 2000);
                 }
             });
         });

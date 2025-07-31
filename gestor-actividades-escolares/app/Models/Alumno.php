@@ -12,16 +12,20 @@ class Alumno extends Model
 
     protected $table = 'alumnos';
 
-    public function actividades()
-    {
-        return $this->belongsToMany(Actividad::class, 'inscripciones')
-                    ->using(Inscripcion::class)
-                    ->withPivot(['fecha_inscripcion', 'estado']);
-    }
+    // public function actividades()
+    // {
+    //     return $this->belongsToMany(Actividad::class, 'inscripciones')
+    //                 ->using(Inscripcion::class)
+    //                 ->withPivot(['fecha_inscripcion', 'estado']);
+    // }
 
     public function inscripciones()
     {
         return $this->hasMany(Inscripcion::class);
     }
-}
 
+    public function actividades()
+    {
+        return $this->hasManyThrough(Actividad::class, Inscripcion::class, 'alumno_id', 'id', 'id', 'actividad_id');
+    }
+}

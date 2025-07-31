@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Model;
 use App\Models\Alumno;
 use App\Models\Actividad;
 
-class Inscripcion extends Pivot
+class Inscripcion extends Model
 {
-    
     protected $guarded = [];
 
     protected $table = 'inscripciones';

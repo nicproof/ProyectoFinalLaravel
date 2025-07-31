@@ -8,14 +8,14 @@
         <div>
             <a href="{{ route('actividades.edit', $actividad) }}" class="btn btn-warning">Editar</a>
             <a href="{{ route('actividades.index') }}" class="btn btn-secondary">Volver</a>
-
         </div>
     </div>
 
     <div class="card mb-4">
         <div class="card-body">
             <p><strong>Día:</strong> {{ ucfirst($actividad->dia) }}</p>
-            <p><strong>Hora:</strong> {{ $actividad->hora }}</p>
+            <p><strong>Hora:</strong> {{ \Carbon\Carbon::parse($actividad->hora_inicio)->format('H:i') }} -
+                                {{ \Carbon\Carbon::parse($actividad->hora_fin)->format('H:i') }}</p>
             <p><strong>Descripción:</strong> {{ $actividad->descripcion }}</p>
         </div>
     </div>

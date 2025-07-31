@@ -2,7 +2,7 @@
 @section('title', 'Inscripciones')
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>📋 Inscripciones</h1>
+        <h1>✍ Inscripciones</h1>
         <a href="{{ route('inscripciones.create') }}" class="btn btn-success">➕ Nueva Inscripción</a>
     </div>
 
@@ -49,4 +49,7 @@
             </table>
         </div>
     @endif
+        <div class="d-flex justify-content-center mt-4">
+        {{ $inscripciones->links('pagination::bootstrap-5') }}
+    </div>
 @endsection

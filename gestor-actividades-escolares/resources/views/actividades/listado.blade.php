@@ -7,7 +7,8 @@
         @foreach ($actividades as $actividad)
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white">
-                    <h4>{{ $actividad->nombre }} ({{ ucfirst($actividad->dia) }} - {{ $actividad->hora_inicio }} a {{ $actividad->hora_fin }})</h4>
+                    <h4>{{ $actividad->nombre }} ({{ ucfirst($actividad->dia) }} - {{ $actividad->hora_inicio }} a
+                        {{ $actividad->hora_fin }})</h4>
                     <p class="mb-0">{{ $actividad->descripcion }}</p>
                 </div>
                 <div class="card-body">

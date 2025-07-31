@@ -11,7 +11,7 @@ class InscripcionController extends Controller
 {
     public function index()
     {
-        $inscripciones = Inscripcion::with('alumno', 'actividad')->get();
+        $inscripciones = Inscripcion::with('alumno', 'actividad')->paginate(12);
         return view('inscripciones.index', compact('inscripciones'));
     }
 

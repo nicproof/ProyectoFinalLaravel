@@ -1,0 +1,11 @@
+
+
+    .alert-small {
+        font-size: 0.875rem;
+        /* 14px */
+        padding: 0.5rem 1rem;
+    }
+
+    .alert-small .btn-close {
+        font-size: 0.75rem;
+    }

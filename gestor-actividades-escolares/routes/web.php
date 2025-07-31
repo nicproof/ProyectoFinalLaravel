@@ -21,6 +21,8 @@ Route::resource('inscripciones', InscripcionController::class)->parameters([
     'inscripciones' => 'inscripcion'
 ]);
 
-<a href="{{ route('actividades.listado') }}" class="btn btn-danger mb-3">
-    <i class="bi bi-target me-2"></i> Ver Listado de Actividades con Alumnos
-</a>
+Route::get('/actividades-con-alumnos', [ActividadController::class, 'listadoConAlumnos'])
+    ->name('actividades.listado');
+
+Route::get('/actividades-pdf', [ActividadController::class, 'generarPdf'])
+    ->name('actividades.pdf');

@@ -4,30 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\Actividad;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ActividadRequest;
 
 class ActividadController extends Controller
 {
-    public function index()
-    {
-        $actividades = Actividad::all();
-        return view('actividades.index', compact('actividades'));
+ public function index(Request $request)
+{
+    $query = Actividad::query();
+
+    if ($request->filled('search')) {
+        $search = $request->input('search');
+        $query->where('nombre', 'like', "%{$search}%")
+              ->orWhere('dia', 'like', "%{$search}%");
     }
+
+    $actividades = $query->orderBy('nombre')->paginate(9)->withQueryString();
+
+    return view('actividades.index', compact('actividades'));
+}
+
 
     public function create()
     {
         return view('actividades.create');
     }
 
-    public function store(Request $request)
+    public function store(ActividadRequest $request)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'descripcion' => 'required',
-            'dia' => 'required|in:lunes,martes,miércoles,jueves,viernes',
-            'hora_inicio' => 'required|date_format:H:i',
-            'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
-        ]);
-
         Actividad::create($request->all());
 
         return redirect()->route('actividades.index')
@@ -51,15 +56,8 @@ class ActividadController extends Controller
         return view('actividades.edit', compact('actividad'));
     }
 
-    public function update(Request $request, Actividad $actividad)
+    public function update(ActividadRequest $request, Actividad $actividad)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'descripcion' => 'required',
-            'dia' => 'required|in:lunes,martes,miércoles,jueves,viernes',
-            'hora_inicio' => 'required|date_format:H:i',
-            'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
-        ]);
 
         $actividad->update($request->all());
 
@@ -81,5 +79,22 @@ class ActividadController extends Controller
         }])->get();
 
         return view('actividades.listado', compact('actividades'));
+    }
+
+
+
+    public function generarPdf()
+    {
+        $actividades = Actividad::with(['inscripciones' => function ($query) {
+            $query->with('alumno') // Cargar el alumno para la vista
+                ->join('alumnos', 'inscripciones.alumno_id', '=', 'alumnos.id')
+                ->orderByRaw("FIELD(inscripciones.estado, 'aceptada', 'pendiente', 'cancelada')")
+                ->orderByRaw("SUBSTRING_INDEX(alumnos.nombre, ' ', -1)") // Último apellido
+                ->orderBy('alumnos.nombre') // Nombre completo como respaldo
+                ->select('inscripciones.*'); // Importante: solo seleccionar inscripciones.*
+        }])->get();
+
+        $pdf = Pdf::loadView('actividades.pdf', compact('actividades'));
+        return $pdf->stream('listado-actividades-alumnos.pdf');
     }
 }

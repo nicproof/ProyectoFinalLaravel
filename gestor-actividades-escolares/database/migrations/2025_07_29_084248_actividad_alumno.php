@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('fecha_inscripcion')->default(now());
             $table->string('estado')->default('pendiente'); // ej: 'pendiente', 'aceptada', 'cancelada'
             $table->timestamps();
+            $table->unique(['alumno_id', 'actividad_id']);
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+       Schema::dropIfExists('inscripciones');
     }
 };
