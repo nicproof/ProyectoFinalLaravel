@@ -152,7 +152,7 @@ Procedimiento recomendado para la instalación del proyecto:
 <pre>
 1.- Descargar proyecto en formato .zip.
  
-       https://github.com/nicproof/ProyectoFinalLaravel/archive/refs/heads/main.zip
+       <code>https://github.com/nicproof/ProyectoFinalLaravel/archive/refs/heads/main.zip</code>code>
  
 2.- Descomprimir en carpata local.
  
@@ -201,13 +201,52 @@ Procedimiento recomendado para la instalación del proyecto:
  
 12.- Acceder localmente a la aplicación.
  
-       http://127.0.0.1:8000
+       http://127.0.0.1:8000                    (acceso a aplicación web)
+       http://127.0.0.1:8000/api/actividades    (acceso a API)
 </pre>
 
+<hr>
 
+BASE DE DATOS
+<pre>
++-------------+         +----------------+         +----------------+
+|  alumnos    |         |  inscripciones |         |  actividades   |
++-------------+         +----------------+         +----------------+
+| id          |<------->| alumno_id      |         | id             |
+| nombre      |         | actividad_id   |<------->| nombre         |
+| curso       |         | fecha_inscrip. |         | descripcion    |
+| edad        |         | estado         |         | dia            |
+| created_at  |         | created_at     |         | hora_inicio    |
+| updated_at  |         | updated_at     |         | hora_fin       |
++-------------+         +----------------+         | created_at     |
+                                                   | updated_at     |
+                                                   +----------------+
+ </pre>
 
+Hemos implementado seeder y factories para alimentar a la base de datos para realizar las pruebas funcionales, realista y bien estructurada.
+<pre>
+1. DatabaseSeeder.php — Puebla la base de datos con datos de prueba.
+   - Crea 20 alumnos usando AlumnoFactory
+   - Crea 8 actividades usando ActividadFactory
+   - Para cada alumno, le asigna entre 1 y 3 actividades aleatorias
+   - Asegura que no se repitan combinaciones de alumno-actividad
+   - Usa InscripcionFactory para completar el resto de los campos (fecha_inscripcion, estado)
+     
+2. ActividadFactory.php — Genera actividades extracurriculares
+    - nombre: Elige uno de varios nombres realistas (Fútbol, Ajedrez, etc.)
+    - descripcion: Frase de ejemplo con 8 palabras
+    - dia: Día aleatorio entre lunes y viernes
+    - hora_inicio y hora_fin: Seleccionadas de forma coherente
 
+3. AlumnoFactory.php — Genera alumnos simulados
+    - nombre: Nombre y apellido aleatorio combinados
+    - curso: Entre 1º y 6º de Primaria
+    - edad: Entre 6 y 12 años
 
+ 4. InscripcionFactory.php — Genera inscripciones de alumnos a actividades
+    -  fecha_inscripcion: Dentro de los últimos 2 meses
+    -  estado: Aleatorio entre pendiente, aceptada y cancelada
+</pre>
 
 
 
