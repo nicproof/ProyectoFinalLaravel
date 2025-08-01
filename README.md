@@ -138,6 +138,75 @@ Tecnologías utilizadas:
 Mapa topológico:
 <img width="1010" height="872" alt="image" src="https://github.com/user-attachments/assets/5eb2e9c3-7fd2-49ec-8703-23fdbc1114b7" />
 
+<hr>
+¿Que aprendido?
+
+La realización del proyecto me ha servido para la consolidación del conocimiento adquirido en el curso, a la hora de plantear como implementar las funcionalidades uno se da cuenta de que las cosas se pueden hacer de muchas maneras, pero a veces esas maneras no son las más óptimas y adecuadas, Laravel ofrece un marco de desarrollo que nos encamina a una forma de hacer las cosas de manera estructurada.
+
+<hr>
+<hr>
+
+INSTRUCCIONES DE INSTALACION:
+
+Procedimiento recomendado para la instalación del proyecto:
+<pre>
+1.- Descargar proyecto en formato .zip.
+ 
+       https://github.com/nicproof/ProyectoFinalLaravel/archive/refs/heads/main.zip
+ 
+2.- Descomprimir en carpata local.
+ 
+       C:\ProyectoFinalLaravel\gestor-actividades-escolares
+ 
+3.- Abrir con Visual Studio Codde.
+ 
+       code C:\laravel\mi_proyecto
+ 
+4.- Realizar copia del archivo .env.example en raiz y renombrar como .env
+ 
+       copy .env.example .env
+ 
+5.- Configurar bade de datos en .env
+ 
+       DB_CONNECTION=mysql
+       DB_HOST=127.0.0.1
+       DB_PORT=3306
+       DB_DATABASE=gestor_actividades_escolares
+       DB_USERNAME=root
+       DB_PASSWORD=
+ 
+6.- Instalar dependencias PHP con Composer.
+ 
+       composer install
+ 
+7.- Configurar clave de la aplicación.
+ 
+       php artisan key:generate
+ 
+8.- Ejecución de migraciones.
+ 
+       php artisan migrate
+ 
+9.- Ejecución de seeder.
+ 
+       php artisan db:seed
+ 
+10.- Instalar domPPDF (para la exportación de registros en .pdf)
+ 
+       composer require barryvdh/laravel-dompdf
+ 
+11.- Levantar servvidor de desarrollo.
+ 
+       php artisan serve
+ 
+12.- Acceder localmente a la aplicación.
+ 
+       http://127.0.0.1:8000
+</pre>
+
+
+
+
 
 
 
