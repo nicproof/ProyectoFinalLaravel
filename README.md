@@ -1,4 +1,9 @@
-INFORMACION DEL PROYECTO:
+<h1>PROYECTO FINAL LARAVEL IFCD45 (PHP framework)<h1>
+<h3>Juan Carlos Darias Alonso</h3>
+
+<br><br><br>
+
+🟢 INFORMACION DEL PROYECTO:
 _________________________________________________________________________________________
 
 ▶️ ¿Qué hace?
@@ -127,6 +132,8 @@ Tecnologías utilizadas:
 
 </table>
 
+Nuestro desarrollo se ha badaso en el patrón de arquitectura de software MVC (Modelo Vista Controlador), de esta forma hemos organizado el código de la aplicación de forma estructurada, clara y mantenible. Laravel 12 incorpora varios componentes adicionales que complementan y amplían este patrón para mejorar la adaptabilidad del mismo, se han usado varios de ellos en el desarrollo de la aplicación.
+
 <table>
  <tr>
   <td><img width="898" height="825" alt="image" src="https://github.com/user-attachments/assets/7eac4579-c40f-4e81-ad1f-7e3e46281d29" /></td>
@@ -138,9 +145,9 @@ Tecnologías utilizadas:
 
 
 Mapa topológico:
-
+<p align="center">
 <img width="810" height="672" alt="image" src="https://github.com/user-attachments/assets/5eb2e9c3-7fd2-49ec-8703-23fdbc1114b7" />
-
+</p>
 <hr>
 ▶️ ¿Que he aprendido?
 
@@ -255,6 +262,9 @@ Hemos implementado seeder y factories para alimentar a la base de datos para rea
     -  fecha_inscripcion: Dentro de los últimos 2 meses
     -  estado: Aleatorio entre pendiente, aceptada y cancelada
 </pre>
+
+
+... y por ahora esto es todo.
 
 
 
