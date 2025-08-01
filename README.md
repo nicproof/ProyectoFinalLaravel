@@ -124,29 +124,32 @@ Tecnologías utilizadas:
   <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/101e552f-68ac-47d5-ac48-8caa131ad215" />
 </td>
  </tr>
+
 </table>
 
 <table>
  <tr>
-  <td><img width="1394" height="918" alt="image" src="https://github.com/user-attachments/assets/7eac4579-c40f-4e81-ad1f-7e3e46281d29" /></td>
-  <td></td>
+  <td><img width="898" height="825" alt="image" src="https://github.com/user-attachments/assets/7eac4579-c40f-4e81-ad1f-7e3e46281d29" /></td>
+  <td><img width="798" height="725" alt="image" src="https://github.com/user-attachments/assets/c17ceaab-dbec-4b07-bdb7-91aaeb6229cd" />
+</td>
  </tr>
 </table>
 
 
 
 Mapa topológico:
-<img width="1010" height="872" alt="image" src="https://github.com/user-attachments/assets/5eb2e9c3-7fd2-49ec-8703-23fdbc1114b7" />
+
+<img width="810" height="672" alt="image" src="https://github.com/user-attachments/assets/5eb2e9c3-7fd2-49ec-8703-23fdbc1114b7" />
 
 <hr>
-¿Que aprendido?
+▶️ ¿Que he aprendido?
 
 La realización del proyecto me ha servido para la consolidación del conocimiento adquirido en el curso, a la hora de plantear como implementar las funcionalidades uno se da cuenta de que las cosas se pueden hacer de muchas maneras, pero a veces esas maneras no son las más óptimas y adecuadas, Laravel ofrece un marco de desarrollo que nos encamina a una forma de hacer las cosas de manera estructurada.
 
 <hr>
 <hr>
 
-INSTRUCCIONES DE INSTALACION:
+⚠️ INSTRUCCIONES DE INSTALACION:
 
 Procedimiento recomendado para la instalación del proyecto:
 <pre>
@@ -207,7 +210,10 @@ Procedimiento recomendado para la instalación del proyecto:
 
 <hr>
 
-BASE DE DATOS
+⚠️ BASE DE DATOS
+
+Presenta diagrama entidad-relación simplificado (ER) de la base de datos implementada, para la gestión de alumnos, actividades estraescolares e inscripciones.
+
 <pre>
 +-------------+         +----------------+         +----------------+
 |  alumnos    |         |  inscripciones |         |  actividades   |
@@ -222,6 +228,8 @@ BASE DE DATOS
                                                    | updated_at     |
                                                    +----------------+
  </pre>
+
+⚠️ SEEDERS Y FACTORIES
 
 Hemos implementado seeder y factories para alimentar a la base de datos para realizar las pruebas funcionales, realista y bien estructurada.
 <pre>
