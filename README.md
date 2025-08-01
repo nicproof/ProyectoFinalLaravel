@@ -90,6 +90,50 @@ Hoja de Ruta del Proyecto "<b><i>Gestor de Actividades Escolares</i></b>":
                 16. Pruebas funcionales y revisión.
 </pre>
 Tecnologías utilizadas:
+<table>
+ <tr>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/4bbc526e-4250-4571-9452-9213c97e1ebc" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/512825ca-9485-473b-8d0b-9e3ea3c65814" />
+</td>
+  <td><img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/c32a001d-b799-4847-81ee-6812d10e9cbb" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/aa7fca30-a6a5-4e15-9fe8-660ea5611579" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/7db75859-f81d-44aa-a44c-d82c88a14210" />
+</td>
+<td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/cb504d81-5074-466e-b8e5-b6ab15b0bab8" />
+
+
+</td>
+    <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/6c8b3d36-f2ab-4b84-9b05-006442dae243" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/c82450d2-a0eb-4398-bdbf-d235f5526e10" />
+</td>
+
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8bbf4f4a-a526-4e00-9737-4932d10a9a7f" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/dbbec69b-677e-40bd-b4ba-41e9ac922442" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/f74bf8ae-72c3-4c1f-86aa-e6511d388321" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/7f47367c-a62d-41bc-8642-01545b373e14" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/89ceaf77-c6f3-4ebf-a944-9e028d56336c" />
+</td>
+  <td><img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/101e552f-68ac-47d5-ac48-8caa131ad215" />
+</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <td><img width="1394" height="918" alt="image" src="https://github.com/user-attachments/assets/7eac4579-c40f-4e81-ad1f-7e3e46281d29" /></td>
+  <td></td>
+ </tr>
+</table>
+
+
 
 Mapa topológico:
 <img width="1010" height="872" alt="image" src="https://github.com/user-attachments/assets/5eb2e9c3-7fd2-49ec-8703-23fdbc1114b7" />
