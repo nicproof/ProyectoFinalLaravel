@@ -82,13 +82,18 @@ Hoja de Ruta del Proyecto "<b><i>Gestor de Actividades Escolares</i></b>":
         8. Crear vistas Blade (de visualización y formularios).
          9. Asegurar coherencia visual en todas las vistas.
           10. Validación de entrada de datos mediante request.
-           11. Crear mensajes de éxito/error.
-            12. Exportación de listados en pdf.
-             13. Crear formulario de busqueda.
-              14. Probar cada flujo (crear, visualizar, editar, eliminar).
-               15. Pruebas funcionales y revisión.
+           11. Crear y comprobar funcionamiento de mensajes de éxito/error.
+            12. Genear estructura API ( Controlador API y ruta api.php)
+             13. Exportación de listados en pdf.
+              14. Crear formulario de busqueda.
+               15. Probar cada flujo (crear, visualizar, editar, eliminar).
+                16. Pruebas funcionales y revisión.
 </pre>
 Tecnologías utilizadas:
+
+Mapa topológico:
+<img width="1010" height="872" alt="image" src="https://github.com/user-attachments/assets/5eb2e9c3-7fd2-49ec-8703-23fdbc1114b7" />
+
 
 
 
